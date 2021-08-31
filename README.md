@@ -17,7 +17,7 @@ These types of resources are supported:
 ## Usage
 
 ```hcl
-module "tf-eip-slb-ecs-rds" {
+module "example" {
   source            = "terraform-alicloud-modules/eip-slb-ecs-rds/alicloud"
   name              = "tf-eip-slb-ecs-rds"
   instance_type     = "ecs.n4.large"
@@ -36,13 +36,13 @@ module "tf-eip-slb-ecs-rds" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | > = 0.13.0 |
-| <a name="requirement_alicloud"></a> [alicloud](#requirement\_alicloud) | > = 1.56.0 |
+| <a name="requirement_alicloud"></a> [alicloud](#requirement\_alicloud) | > = 1.131.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_alicloud"></a> [alicloud](#provider\_alicloud) | > = 1.56.0 |
+| <a name="provider_alicloud"></a> [alicloud](#provider\_alicloud) | > = 1.131.0 |
 
 ## Submit Issues
 
