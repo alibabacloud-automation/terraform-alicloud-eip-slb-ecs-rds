@@ -14,24 +14,11 @@ These types of resources are supported:
 * [alicloud_slb_load_balancer](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/slb_load_balancer)
 * [alicloud_eip](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/eip)
 
-## Requirements
-
-| Name | Version |
-|------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | > = 0.13.0 |
-| <a name="requirement_alicloud"></a> [alicloud](#requirement\_alicloud) | > = 1.131.0 |
-
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_alicloud"></a> [alicloud](#provider\_alicloud) | > = 1.131.0 |
-
 ## Usage
 
 ```hcl
 module "tf-eip-slb-ecs-rds" {
-  source            = "../"
+  source            = "terraform-alicloud-modules/eip-slb-ecs-rds/alicloud"
   name              = "tf-eip-slb-ecs-rds"
   instance_type     = "ecs.n4.large"
   rds_instance_type = "rds.mysql.s2.large"
@@ -43,6 +30,19 @@ module "tf-eip-slb-ecs-rds" {
 
 * This module using AccessKey and SecretKey are from `profile` and `shared_credentials_file`. If you have not set them
   yet, please install [aliyun-cli](https://github.com/aliyun/aliyun-cli#installation) and configure it.
+
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | > = 0.13.0 |
+| <a name="requirement_alicloud"></a> [alicloud](#requirement\_alicloud) | > = 1.56.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_alicloud"></a> [alicloud](#provider\_alicloud) | > = 1.56.0 |
 
 ## Submit Issues
 
