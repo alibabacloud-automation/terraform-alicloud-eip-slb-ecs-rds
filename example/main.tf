@@ -3,8 +3,8 @@ variable "name" {
 }
 
 data "alicloud_zones" "default" {
-  available_resource_creation = "Rds"
-  enable_details              = true
+  //  available_resource_creation = "Rds"
+  enable_details = true
 }
 
 resource "alicloud_vpc" "default" {
