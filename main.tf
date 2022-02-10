@@ -23,9 +23,10 @@ resource "alicloud_instance" "default" {
   system_disk_name           = var.system_disk_name
   system_disk_description    = var.system_disk_description
   image_id                   = var.image_id
+  period                     = var.period
   internet_max_bandwidth_out = var.internet_max_bandwidth_out
   data_disks {
-    name        = var.name
+    name        = var.data_disks_name
     size        = var.ecs_size
     category    = var.category
     description = var.description

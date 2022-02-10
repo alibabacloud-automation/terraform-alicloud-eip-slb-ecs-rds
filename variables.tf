@@ -1,13 +1,13 @@
 variable "name" {
   description = "The specification of module name."
   type        = string
-  default     = "tf-eip-slb-ecs-rds"
+  default     = ""
 }
 
 variable "description" {
   description = "The specification of module description."
   type        = string
-  default     = "tf-eip-slb-ecs-rds-description"
+  default     = ""
 }
 
 variable "available_disk_category" {
@@ -31,19 +31,31 @@ variable "system_disk_category" {
 variable "system_disk_name" {
   description = "The specification of the system disk name."
   type        = string
-  default     = "system_disk"
+  default     = ""
+}
+
+variable "data_disks_name" {
+  description = "The name of the data disk."
+  type        = string
+  default     = ""
 }
 
 variable "system_disk_description" {
   description = "The specification of the system disk description."
   type        = string
-  default     = "system_disk_description"
+  default     = ""
 }
 
 variable "image_id" {
   description = "The specification of the image id."
   type        = string
   default     = "ubuntu_18_04_64_20G_alibase_20190624.vhd"
+}
+
+variable "period" {
+  description = "The duration that you will buy DB instance."
+  type        = number
+  default     = 1
 }
 
 variable "internet_max_bandwidth_out" {
@@ -67,7 +79,7 @@ variable "category" {
 variable "engine" {
   description = "The specification of the engine."
   type        = string
-  default     = "MySQL"
+  default     = ""
 }
 
 variable "engine_version" {
@@ -115,13 +127,13 @@ variable "slb_spec" {
 variable "slb_tags_info" {
   description = "The specification of the slb tags info."
   type        = string
-  default     = "create for internet"
+  default     = ""
 }
 
 variable "eip_bandwidth" {
   description = "The specification of the eip bandwidth."
   type        = string
-  default     = "10"
+  default     = ""
 }
 
 variable "eip_internet_charge_type" {
