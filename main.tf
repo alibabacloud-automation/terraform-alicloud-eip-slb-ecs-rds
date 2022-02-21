@@ -8,14 +8,14 @@ resource "alicloud_slb_load_balancer" "default" {
   address_type       = var.slb_address_type
   load_balancer_spec = var.slb_spec
   vswitch_id         = var.vswitch_id
-  tags               = {
+  tags = {
     info = var.slb_tags_info
   }
 }
 
 resource "alicloud_instance" "default" {
-  availability_zone          = var.availability_zone
   instance_name              = var.name
+  availability_zone          = var.availability_zone
   security_groups            = var.security_group_ids
   vswitch_id                 = var.vswitch_id
   instance_type              = var.instance_type
@@ -25,11 +25,11 @@ resource "alicloud_instance" "default" {
   image_id                   = var.image_id
   internet_max_bandwidth_out = var.internet_max_bandwidth_out
   data_disks {
-    name        = var.name
+    name        = var.data_disks_name
     size        = var.ecs_size
     category    = var.category
     description = var.description
-    encrypted   = true
+    encrypted   = var.encrypted
   }
 }
 
