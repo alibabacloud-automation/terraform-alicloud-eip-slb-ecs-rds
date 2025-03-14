@@ -55,12 +55,6 @@ variable "security_group_ids" {
   default     = []
 }
 
-variable "available_disk_category" {
-  description = "The specification of available disk category."
-  type        = string
-  default     = "cloud_efficiency"
-}
-
 variable "instance_type" {
   description = "The specification of the instance type."
   type        = string
