@@ -4,7 +4,7 @@ provider "alicloud" {
 
 data "alicloud_db_zones" "default" {
   engine         = "MySQL"
-  engine_version = "5.6"
+  engine_version = "5.7"
 }
 
 locals {
@@ -13,6 +13,7 @@ locals {
 
 data "alicloud_images" "default" {
   most_recent   = true
+  owners        = "system"
   instance_type = data.alicloud_instance_types.default.instance_types[0].id
 }
 
@@ -25,7 +26,7 @@ data "alicloud_instance_types" "default" {
 
 data "alicloud_db_instance_classes" "default" {
   engine         = "MySQL"
-  engine_version = "5.6"
+  engine_version = "5.7"
 }
 
 module "vpc" {
@@ -76,8 +77,8 @@ module "example" {
 
   #alicloud_db_instance
   engine               = "MySQL"
-  engine_version       = "5.6"
-  rds_instance_type    = data.alicloud_db_instance_classes.default.instance_classes[1].instance_class
+  engine_version       = "5.7"
+  rds_instance_type    = data.alicloud_db_instance_classes.default.instance_classes[0].instance_class
   instance_storage     = var.instance_storage
   instance_charge_type = var.instance_charge_type
   monitoring_period    = var.monitoring_period
